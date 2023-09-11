@@ -32,8 +32,8 @@ mixin NetworkStatusListenableBoxMixin<
     });
   }
 
-  void updateViewState(NetworkStatus networkStatus) {
-    networkStatus = networkStatus;
+  void updateViewState(NetworkStatus ns) {
+    networkStatus = ns;
     setState(() {});
   }
 }

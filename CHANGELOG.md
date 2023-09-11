@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+Flutter package for build real internet connection notifier on widget tree.
