@@ -9,10 +9,27 @@
 </div>
 </p>
 
+A Flutter package to check your internet connection and show result as widget on your screen!
 
 
+This library provides functionality to monitor and verify internet connectivity
+by checking reachability to various `Uri`s. It relies on the 'internet_connection_checker_plus' => `connectivity_plus`
+package for listening to connectivity changes and the `http` package for making
+network requests.
 
 ## Features
+
+
+## Supported Platforms
+
+| Platform | Check Connectivity | Listen for Changes |
+| :------: | :----------------: | :----------------: |
+| Android  |         ✅         |         ✅         |
+|   iOS    |         ✅         |         ✅         |
+|  macOS   |         ✅         |         ✅         |
+|  Linux   |         ✅         |         ✅         |
+| Windows  |         ✅         |         ✅         |
+|   Web    |         ✅         |         ✅         |
 
 
 ## Getting started
