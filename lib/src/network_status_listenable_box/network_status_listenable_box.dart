@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../enums/network_status.dart';
 import '../mixins/state_mixin.dart';
-import '../services/network_service.dart';
 import '../widgets/custom_animated_cross.dart';
 import 'mixin.dart';
 

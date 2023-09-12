@@ -14,7 +14,7 @@ class Connected extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NetworkStatusView(child: child, connectedChild: connectedChild),
+        NetworkStatusView(connectedChild: connectedChild, child: child),
         Expanded(child: widget ?? const SizedBox.shrink()),
       ],
     );

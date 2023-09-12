@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../enums/network_status.dart';
 import '../mixins/state_mixin.dart';
 import '../services/network_service.dart';
 
@@ -10,7 +12,6 @@ mixin NetworkStatusListenableBoxMixin<
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     networkService = NetworkService();
     onWidgetCompleted(() {
@@ -21,7 +22,7 @@ mixin NetworkStatusListenableBoxMixin<
 
   void checkWhenStartUP() async {
     onWidgetCompleted(() async {
-      final status = await networkService.checkNetwork();
+      final status = await networkService.check();
       updateViewState(status);
     });
   }
