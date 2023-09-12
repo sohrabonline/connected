@@ -57,12 +57,46 @@ For more information, see the [Flutter Networking Documentation].
 
 ## Usage
 
-to `/example` folder.
+### 1. Add dependency
 
-```dart
-const like = 'sample';
+Add the `internet_connection_checker_plus` package to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  connected: [latest version]
 ```
 
+### 2. Import the package
+
+Import the `connected` package into your Dart file:
+
+```dart
+import 'package:connected/connected.dart';
+```
+
+### 3. Checking for internet connectivity
+
+The simplest way to check for internet connectivity is to use the
+`NetworkService()` class:
+
+```dart
+Future<bool> get hasConnection async => await NetworkService().isConnected;
+
 ## Additional information
+
+### 4. Listening for internet connectivity changes
+
+Wrap "widget" in builder of MaterialApp with Connected()
+
+```dart
+      ...child: MaterialApp(
+        navigatorKey: NavigationService.instance.navigationKey,
+        debugShowCheckedModeBanner: false,
+        builder: (context, widget) {
+          return Connected(widget: widget ?? MySizedBox.h0);
+        },
+        home: App(),
+      )...
+```
 
 
