@@ -38,7 +38,7 @@ network requests.
 
 <p align="center">
   <a href="https://linkedin.com/in/sohrabonline">
-    <img src="https://raw.githubusercontent.com/sohrabonline/connected/master/assets/presentation.gif" >
+    <img src="https://raw.githubusercontent.com/sohrabonline/connected/master/assets/presentation.gif" width="300">
   </a>
 </p>
 
