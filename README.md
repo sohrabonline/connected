@@ -81,6 +81,7 @@ The simplest way to check for internet connectivity is to use the
 
 ```dart
 Future<bool> get hasConnection async => await NetworkService().isConnected;
+```
 
 ## Additional information
 
