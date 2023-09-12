@@ -36,6 +36,12 @@ network requests.
 
 ## Getting started
 
+<p align="center">
+  <a href="https://linkedin.com/in/sohrabonline">
+    <img src="https://raw.githubusercontent.com/sohrabonline/connected/master/assets/presentation.gif" >
+  </a>
+</p>
+
 ### Android
 
 Add the following permissions to your `AndroidManifest.xml` file:
@@ -99,5 +105,7 @@ Wrap "widget" in builder of MaterialApp with Connected()
         home: App(),
       )
 ```
+
+
 
 
