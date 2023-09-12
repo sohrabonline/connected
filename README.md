@@ -3,7 +3,7 @@
     <img src="https://raw.githubusercontent.com/sohrabonline/connected/master/assets/logo.png" height="300">
   </a>
   <h1 align="center">CONNECTED</h1>
-  <pre style="text-align: start;color: rgb(0, 0, 0);"><span style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">are you sure you are</span><span style="font-family: Verdana, Geneva, sans-serif;"> <strong><span style="color: rgb(44, 130, 201);">connected</span></strong>?</span></pre>
+  <pre style="text-align: start;color: rgb(0, 0, 0);"><span style="color: rgb(0, 0, 0); font-family: Verdana, Geneva, sans-serif;">Are you sure you are</span><span style="font-family: Verdana, Geneva, sans-serif;"> <strong><span style="color: rgb(44, 130, 201);">connected</span></strong>?</span></pre>
 <div id="gtx-trans" style="position: absolute; left: 211px; top: -5px;">
     <div class="gtx-trans-icon"></div>
 </div>
@@ -18,7 +18,9 @@ package for listening to connectivity changes and the `http` package for making
 network requests.
 
 ## Features
-
+- Check internet connectivity status
+- Listen for internet connectivity changes and show it on your screen as widget
+- You can customize connected and disconnected widget
 
 ## Supported Platforms
 
@@ -34,7 +36,24 @@ network requests.
 
 ## Getting started
 
+### Android
 
+Add the following permissions to your `AndroidManifest.xml` file:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+### macOS
+
+Add the following permissions to your macOS `.entitlements` files:
+
+```entitlements
+<key>com.apple.security.network.client</key>
+<true/>
+```
+
+For more information, see the [Flutter Networking Documentation].
 
 ## Usage
 
