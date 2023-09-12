@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://isar.dev">
-    <img src="https://github.com/sohrabonline/connected/blob/master/assets/logo.png?sanitize=true" height="128">
+    <img src="https://github.com/sohrabonline/connected/blob/master/assets/logo.png?sanitize=true" height="228">
   </a>
   <h1 align="center">Isar Database</h1>
 </p>
