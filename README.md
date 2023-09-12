@@ -89,14 +89,14 @@ Future<bool> get hasConnection async => await NetworkService().isConnected;
 Wrap "widget" in builder of MaterialApp with Connected()
 
 ```dart
-      ...child: MaterialApp(
+      child: MaterialApp(
         navigatorKey: NavigationService.instance.navigationKey,
         debugShowCheckedModeBanner: false,
         builder: (context, widget) {
           return Connected(widget: widget ?? MySizedBox.h0);
         },
         home: App(),
-      )...
+      )
 ```
 
 
