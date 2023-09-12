@@ -8,19 +8,24 @@ abstract class INetworkService {
   Future<NetworkStatus> check();
   void listenConnectivity(void Function(NetworkStatus status) onChange);
   void dispose();
+  Future<bool> get isConnected;
 }
 
 class NetworkService extends INetworkService {
   NetworkService() {
-    _connectivity = InternetConnection();
+    _connection = InternetConnection.createInstance(
+      customCheckOptions: [
+        InternetCheckOption(uri: Uri.parse('https://icanhazip.com')),
+      ],
+    );
   }
 
   StreamSubscription<InternetStatus>? _subscription;
-  late InternetConnection _connectivity;
+  late InternetConnection _connection;
 
   @override
   Future<NetworkStatus> check() async {
-    bool result = await InternetConnection().hasInternetAccess;
+    bool result = await _connection.hasInternetAccess;
     return NetworkStatus.fromBool(result);
   }
 
@@ -31,10 +36,12 @@ class NetworkService extends INetworkService {
 
   @override
   void listenConnectivity(void Function(NetworkStatus status) onChange) {
-    _subscription =
-        _connectivity.onStatusChange.listen((InternetStatus result) {
+    _subscription = _connection.onStatusChange.listen((InternetStatus result) {
       onChange(NetworkStatus.fromInternetStatusResult(result));
     });
   }
-}
 
+  @override
+  Future<bool> get isConnected async =>
+      await InternetConnection().hasInternetAccess;
+}
