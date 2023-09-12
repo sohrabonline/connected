@@ -6,14 +6,19 @@ import '../enums/network_status.dart';
 
 abstract class INetworkService {
   Future<NetworkStatus> check();
+
   void listenConnectivity(void Function(NetworkStatus status) onChange);
+
   void dispose();
+
   Future<bool> get isConnected;
 }
 
 class NetworkService extends INetworkService {
   NetworkService() {
     _connection = InternetConnection.createInstance(
+      useDefaultOptions: false,
+      checkInterval: const Duration(seconds: 5),
       customCheckOptions: [
         InternetCheckOption(uri: Uri.parse('https://icanhazip.com')),
       ],
