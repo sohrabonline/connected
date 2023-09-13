@@ -20,6 +20,7 @@ class _NetworkStatusViewState extends State<NetworkStatusView>
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent,
       child: CustomAnimatedCross(
         first: widget.child ??
             Container(
@@ -34,7 +35,8 @@ class _NetworkStatusViewState extends State<NetworkStatusView>
                 ),
               ),
             ),
-        second: widget.connectedChild ?? const SizedBox(height: 0),
+        second: widget.connectedChild ??
+            Container(color: widget.child == null ? Colors.red : Colors.white),
         showFirst: networkStatus == NetworkStatus.off,
       ),
     );

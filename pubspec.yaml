@@ -1,6 +1,6 @@
 name: connected
 description:  Flutter package for build real internet connection notifier on widget tree.
-version: 0.0.6+9
+version: 0.0.6+10
 homepage: https://github.com/sohrabonline/connected
 
 environment:

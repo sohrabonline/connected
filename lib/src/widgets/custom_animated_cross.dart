@@ -4,7 +4,7 @@ class CustomAnimatedCross extends StatelessWidget {
   const CustomAnimatedCross(
       {Key? key,
       this.showFirst = true,
-      this.duration = const Duration(milliseconds: 100),
+      this.duration = const Duration(milliseconds: 200),
       required this.first,
       required this.second})
       : super(key: key);
