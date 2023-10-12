@@ -47,6 +47,5 @@ class NetworkService extends INetworkService {
   }
 
   @override
-  Future<bool> get isConnected async =>
-      await InternetConnection().hasInternetAccess;
+  Future<bool> get isConnected async => await _connection.hasInternetAccess;
 }
