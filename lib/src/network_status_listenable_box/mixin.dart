@@ -35,6 +35,6 @@ mixin NetworkStatusListenableBoxMixin<
 
   void updateViewState(NetworkStatus ns) {
     networkStatus = ns;
-    setState(() {});
+    if (mounted) setState(() {});
   }
 }
