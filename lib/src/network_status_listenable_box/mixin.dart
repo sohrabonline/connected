@@ -10,16 +10,6 @@ mixin NetworkStatusListenableBoxMixin<
   late INetworkService networkService;
   NetworkStatus networkStatus = NetworkStatus.on;
 
-  @override
-  void initState() {
-    super.initState();
-    networkService = NetworkService();
-    onWidgetCompleted(() {
-      checkWhenStartUP();
-      startListener();
-    });
-  }
-
   void checkWhenStartUP() async {
     onWidgetCompleted(() async {
       final status = await networkService.check();
@@ -29,7 +19,10 @@ mixin NetworkStatusListenableBoxMixin<
 
   void startListener() async {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      networkService.listenConnectivity((status) => updateViewState(status));
+      networkService.listenConnectivity((status) {
+        print("status:  $status");
+        updateViewState(status);
+      });
     });
   }
 

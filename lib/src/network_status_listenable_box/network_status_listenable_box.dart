@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 
+import '../../connected.dart';
 import '../enums/network_status.dart';
 import '../mixins/state_mixin.dart';
 import '../widgets/custom_animated_cross.dart';
 import 'mixin.dart';
 
 class NetworkStatusView extends StatefulWidget {
-  const NetworkStatusView({Key? key, this.child, this.connectedChild})
+  const NetworkStatusView(
+      {Key? key,
+      this.child,
+      this.connectedChild,
+      this.checkInterval,
+      this.connectionTimeOut})
       : super(key: key);
   final Widget? child;
   final Widget? connectedChild;
+  final Duration? checkInterval;
+  final Duration? connectionTimeOut;
 
   @override
   State<NetworkStatusView> createState() => _NetworkStatusViewState();
@@ -17,6 +25,19 @@ class NetworkStatusView extends StatefulWidget {
 
 class _NetworkStatusViewState extends State<NetworkStatusView>
     with StateMixin, NetworkStatusListenableBoxMixin {
+  @override
+  void initState() {
+    super.initState();
+    // print("widget.checkInterval:  ${widget.checkInterval}");
+    // print("widget.connectionTimeOut:  ${widget.connectionTimeOut}");
+    networkService = NetworkService(
+        timeOut: widget.connectionTimeOut, checkInterval: widget.checkInterval);
+    onWidgetCompleted(() {
+      checkWhenStartUP();
+      startListener();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(

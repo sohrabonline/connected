@@ -1,4 +1,4 @@
-import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import '../internet_checker/internet_status.dart';
 
 enum NetworkStatus {
   on,
